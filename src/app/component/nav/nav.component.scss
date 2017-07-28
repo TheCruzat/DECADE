@@ -1,0 +1,96 @@
+
+@import '../../../styles/colors';
+
+nav {
+  /*height: 0px;*/
+  overflow: hidden;
+  position: relative;
+  /*border-top: 1px solid #666*/
+
+  &.sub-a {
+    background: url(images/decade-a.jpg) center no-repeat; background-size: cover;
+  }
+
+  &.sub-b {
+    background: url(images/decade-b.jpg) center no-repeat; background-size: cover;
+  }
+
+  &.sub-c {
+    background: url(images/decade-c.jpg) center no-repeat; background-size: cover;
+  }
+
+  &.sub-d {
+    background: url(images/decade-d.jpg) center no-repeat; background-size: cover;
+  }
+
+}
+
+nav .contain {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+nav .bg {
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.2);
+}
+
+nav span {
+  width: 25%;
+  text-align: center;
+  line-height: 1.2;
+  font-size: 1.4rem;
+  display: block;
+  padding-top: 4px;
+  color: #fff;
+  opacity: 0.7;
+  text-shadow: 0 0px 7px #000;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover:not(.select) {
+    background: rgba(255,255,255,0.8);
+    text-shadow: 0 0px 7px #fff;
+    opacity: 1;
+  }
+
+    &:nth-child(1):not(.select):hover {
+      color: $color1;
+    }
+    &:nth-child(2):not(.select):hover {
+      color: $color2;
+    }
+    &:nth-child(3):not(.select):hover {
+      color: $color3;
+    }
+    &:nth-child(4):not(.select):hover {
+      color: $color4;
+    }
+
+  &.select {
+    opacity: 1;
+
+    &:nth-child(1) {
+      background: $color1;
+    }
+
+    &:nth-child(2) {
+      background: $color2;
+    }
+
+    &:nth-child(3) {
+      background: $color3;
+    }
+
+    &:nth-child(4) {
+      background: $color4;
+    }
+  }
+}
+
+/*nav .select {
+  background: rgba(0,0,0,0.6);
+  opacity: 1;
+}*/

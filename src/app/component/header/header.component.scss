@@ -1,0 +1,84 @@
+
+
+.header {
+  /*border-bottom: 1px solid #fff;*/
+}
+
+.header h1 {
+  font-size: 4rem;
+  background: #000;
+  height: 66px;
+    color: #ddd;
+    text-align: center;
+    width: 100%;
+    font-weight: 100;
+    line-height: 1.2;
+
+  .bg {
+    /*background: url(images/bg/DSCN0066.JPG) center no-repeat;*/ background-size: cover;
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    opacity: 0.9; z-index: 1;
+  }
+  .tex {
+    position: relative; z-index: 2;line-height: 1; cursor: pointer;
+  }
+}
+
+.header h1 .bg {
+  display: none;
+}
+
+.header h3 {
+  height: 0px;
+}
+
+
+
+/*.header + .contain {
+  display: block; padding-top: 166px; padding-bottom: 80px; text-align: justify; text-shadow: 0 1px 2px #fff;
+}
+
+.header.sub + .contain {
+  padding-top: 134px;
+}*/
+.header.main {
+  h1 {
+    /*margin: 2.5rem 0;*/
+    font-size: 7.05em;
+    text-transform: uppercase;/*padding-top: 9px;*/
+    letter-spacing: 0.4rem;
+    height: 88px;
+    height: 114px;
+    overflow: hidden;
+    /*color: #fff;*/
+    /*text-shadow: 0 1px 5px #000;*/
+    /*color: #ddd;*/
+    border-top: 1px solid #444;
+    position: relative;
+    background: #fff;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  h3 {
+    color: #666;
+    color: #aaa;
+    width: 100%; text-align: center;
+    /*background: #444;*/
+    background: rgba(0, 0, 0, 0.8);
+    line-height: 1.6;
+      font-size: 1em;
+      overflow: hidden;
+      box-shadow: 0 0 4px #fff;
+      height: 20px;
+      letter-spacing: .11rem;
+      letter-spacing: .5rem;
+    /*border-top: 1px solid #fff; */
+      /* border-top: 1px solid #fff; */
+    /*margin: 8px 0 0;*/
+  }
+}
+
+  .header nav {
+    height: auto;
+  }
+

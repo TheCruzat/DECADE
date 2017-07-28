@@ -1,1 +1,125 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import 'styles/fonts';
+@import 'styles/colors';
+
+* {
+  margin: 0;
+  padding: 0;
+  line-height: 1.4;
+  box-sizing: border-box;
+}
+body, html {
+  font-family: 'Avenir Next LT Pro', sans-serif; font-weight: 900;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: #f4f4f4;
+}
+
+.header, .footer {
+  display: block; position: fixed; z-index: 5;  width: 100%; /*border-bottom: 1px solid #f1f1f1;*/
+
+  /*border-bottom: 1px solid #fff;*/
+  box-shadow: 0 0 20px #fff;
+}
+
+hr {
+  height: 120px;
+  border: none;
+
+  &.main {
+    height: 160px;
+  }
+}
+
+
+
+h2 {
+  margin: 32px 0 16px; text-transform: uppercase; font-size: 1.2em; font-weight: 600;
+
+}
+.topper {
+  text-align: center;
+  margin-top: 0;
+  line-height: 1;
+  font-size: 3rem;
+  color: #aaa;
+  font-weight: 100;
+}
+.largo {
+  font-size: 1.3rem;
+}
+p + p {
+  margin-top: 16px;
+}
+p + h2,
+p.h2 {
+  border-top: 1px solid #ddd; padding-top: 28px;
+}
+p.credits,
+p.h2 {
+  margin-top: 32px;
+}
+p.credits {
+  /*color: #999;*/
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: #13c7a3;
+}
+.button {
+  color: rgba(255,255,255,0.9);
+  text-transform: uppercase;
+  font-weight: 900;
+  padding: 12px 24px;
+  border-radius: 4px;
+  text-decoration: none;
+  display: block;
+  width: 150px;
+  text-align: center;
+  transition: all 0.3s;
+  margin: 24px auto 0;
+}
+.button:hover {
+  background-color: #03b28f;
+  color: #fff;
+}
+.contain {
+  max-width: 624px;
+  width: 100%;
+  margin: 0 auto; /* 48px;*/
+  padding: 0 12px;
+
+  &.body {
+    text-align: justify;
+  }
+}
+
+@media (min-width: 960px) {
+  .contain.wide {
+    max-width: 920px;
+  }
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+
+iframe {
+  margin-bottom: 24px;
+  width: 100%!important;
+}
+@media (max-width: 767px) {
+  h1 {
+    /*text-align: left;*/
+    /*font-size: 2em;*/
+  }
+}

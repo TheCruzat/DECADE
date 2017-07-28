@@ -1,0 +1,71 @@
+.thumbs {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 24px 0;
+}
+
+.thumbs span {
+  display: block;
+  width: 24%;
+  position: relative;
+  cursor: pointer;
+}
+
+.thumbs img {
+  position: relative;
+  z-index: 1;
+  /*transition: border 0.4s;*/
+  border: 0px solid #fff;
+}
+
+.thumbs em {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background: rgba(80,80,80,0.8);
+  box-shadow: inset 0 0 20px #fff;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: normal;
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: all 0.4s;
+  /*padding-bottom: 1rem;*/
+}
+
+.thumbs span:hover em {
+  font-size: 2.4rem;
+  opacity: 1;
+  /*padding-bottom: 0;*/
+}
+
+.thumbs span:hover img {
+  border: 4px solid #fff;
+}
+
+.thumbs span:nth-child(1) em {
+  background: rgba(80,193,181,0.8);
+}
+
+.thumbs span:nth-child(2) em {
+  background: rgba(218,111,132,0.8);
+}
+
+.thumbs span:nth-child(3) em {
+  background: rgba(3,144,217,0.8);
+}
+
+.thumbs span:nth-child(4) em {
+  background: rgba(248,183,1,0.8);
+}
+
+.thumbs span:nth-child(3),
+.thumbs span:nth-child(4) {
+  /*margin-top: 12px;*/
+}

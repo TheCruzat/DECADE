@@ -1,0 +1,45 @@
+
+
+.footer {
+  bottom: 0; left: 0; right: 0; top: auto;
+  background: #fff; text-align: center; text-transform: uppercase;
+  font-size: 0.7rem;
+  padding: 7px 0;
+  border-top: 1px solid #e0e0e0;
+  color: #999;
+  /*position: relative;*/
+
+  p {
+    position: relative; z-index: 2;
+  }
+
+  .bg {
+    position: absolute; z-index: 1;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.2);
+  }
+
+  &.clear .bg {
+    display: none;
+  }
+
+  &.sub-a {
+    color: #fff; border-top: none; text-shadow: 0 0 5px #000;
+    background: url(images/decade-a.jpg) center no-repeat; background-size: cover;
+  }
+
+  &.sub-b {
+    color: #fff; border-top: none; text-shadow: 0 0 5px #000;
+    background: url(images/decade-b.jpg) center no-repeat; background-size: cover;
+  }
+
+  &.sub-c {
+    color: #fff; border-top: none; text-shadow: 0 0 5px #000;
+    background: url(images/decade-c.jpg) center no-repeat; background-size: cover;
+  }
+
+  &.sub-d {
+    color: #fff; border-top: none; text-shadow: 0 0 5px #000;
+    background: url(images/decade-d.jpg) center no-repeat; background-size: cover;
+  }
+}
