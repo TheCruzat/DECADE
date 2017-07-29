@@ -1,4 +1,5 @@
 
+@import '../../../styles/mixins';
 
 .header {
   /*border-bottom: 1px solid #fff;*/
@@ -41,10 +42,12 @@
 .header.sub + .contain {
   padding-top: 134px;
 }*/
+
+
 .header.main {
   h1 {
     /*margin: 2.5rem 0;*/
-    font-size: 7.05em;
+    font-size: 3em;
     text-transform: uppercase;/*padding-top: 9px;*/
     letter-spacing: 0.4rem;
     height: 88px;
@@ -57,6 +60,10 @@
     position: relative;
     background: #fff;
     border-bottom: 1px solid #e0e0e0;
+
+    @include width-above($sz-med) {
+      font-size: 7.04em;
+    }
   }
 
   h3 {
@@ -65,13 +72,26 @@
     width: 100%; text-align: center;
     /*background: #444;*/
     background: rgba(0, 0, 0, 0.8);
-    line-height: 1.6;
-      font-size: 1em;
-      overflow: hidden;
+    line-height: 1.2;
+      font-size: 0.8em;
       box-shadow: 0 0 4px #fff;
-      height: 20px;
       letter-spacing: .11rem;
       letter-spacing: .5rem;
+
+      height: 36px;
+      padding-top: 4px;
+    @include width-above($sz-med) {
+      line-height: 1.6;
+      font-size: 1em;
+      overflow: hidden;
+      height: 20px;
+      padding-top: 0;
+
+      br {
+        display: none;
+      }
+    }
+
     /*border-top: 1px solid #fff; */
       /* border-top: 1px solid #fff; */
     /*margin: 8px 0 0;*/

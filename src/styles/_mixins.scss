@@ -1,0 +1,63 @@
+$sz-xs: 360px;
+$sz-sm: 480px;
+$sz-med: 720px;
+$sz-lg: 990px;
+$sz-xl: 1200px;
+
+// Master media query mixin; only for use with screens, of course; should work with raw integers or pixel values; adapted from Kipple: https://github.com/synapticism/kipple
+@mixin width($min-query: null, $max-query: null) {
+  @if $min-query == null and $max-query == null {
+    @warn "Mixin k-media() received two null values; no output.";
+    @content; // Pass content anyway, but it won't be wrapped in a media query
+  }
+  @else if $max-query == null {
+    @media screen and (min-width: $min-query) { @content; }
+  }
+  @else if $min-query == null {
+    @media screen and (max-width: $max-query) { @content; }
+  }
+  @else {
+    @media screen and (min-width: $min-query) and (max-width: rem($max-query)) { @content; }
+  }
+}
+@mixin width-above($min-query) {
+  @include width($min-query, null) { @content; }
+}
+@mixin width-below($max-query) {
+  @include width(null, $max-query - 1) { @content; }
+}
+@mixin width-between($min-query: null, $max-query: null) {
+  @if $min-query == null or $max-query == null {
+    @warn "Mixin media-between() received a null value."
+  }
+  @include width($min-query, $max-query - 1) { @content; }
+}
+
+
+@mixin height($min-query: null, $max-query: null) {
+  @if $min-query == null and $max-query == null {
+    @warn "Mixin k-media() received two null values; no output.";
+    @content; // Pass content anyway, but it won't be wrapped in a media query
+  }
+  @else if $max-query == null {
+    @media screen and (min-height: $min-query) { @content; }
+  }
+  @else if $min-query == null {
+    @media screen and (max-height: $max-query) { @content; }
+  }
+  @else {
+    @media screen and (min-height: $min-query) and (max-height: rem($max-query)) { @content; }
+  }
+}
+@mixin height-above($min-query) {
+  @include height($min-query, null) { @content; }
+}
+@mixin height-below($max-query) {
+  @include height(null, $max-query - 1) { @content; }
+}
+@mixin height-between($min-query: null, $max-query: null) {
+  @if $min-query == null or $max-query == null {
+    @warn "Mixin height-between() received a null value."
+  }
+  @include height($min-query, $max-query - 1) { @content; }
+}
