@@ -1,0 +1,30 @@
+@import '../styles/mixins';
+
+hr {
+  height: 1px;
+}
+
+.foot.contain {
+  padding-bottom: 60px;
+
+  @include width-below($sz-med) {
+    padding-bottom: 80px;
+  }
+
+  .buttons {
+    display: flex;
+    align-items: center;
+    @include width-below($sz-med) {
+      justify-content: center;
+    }
+
+  }
+  .fb_iframe_widget {
+    /*margin-bottom: 24px;*/
+    margin-right: 4px;
+    margin-top: -2px;
+    span {
+      float: left;
+    }
+  }
+}

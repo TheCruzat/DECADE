@@ -2,26 +2,35 @@
 @import '../../../styles/mixins';
 
 .header {
-  /*border-bottom: 1px solid #fff;*/
 }
 
 .header h1 {
-  font-size: 4rem;
+  font-size: 2.6rem;
   background: #000;
-  height: 66px;
+  height: 60px;
     color: #ddd;
     text-align: center;
     width: 100%;
     font-weight: 100;
+    line-height: 1.65;
+    letter-spacing: .6rem;
+    font-family: "Avenir Next LT Pro";
+  @include width-above($sz-xs) {
+  }
+
+  @include width-above($sz-sm) {
+    font-size: 4em;
+    height: 66px;
     line-height: 1.2;
+  }
 
   .bg {
-    /*background: url(images/bg/DSCN0066.JPG) center no-repeat;*/ background-size: cover;
+    background-size: cover;
     position: absolute; top: 0; left: 0; right: 0; bottom: 0;
     opacity: 0.9; z-index: 1;
   }
   .tex {
-    position: relative; z-index: 2;line-height: 1; cursor: pointer;
+    position: relative; z-index: 2;line-height: 1.25; cursor: pointer;
   }
 }
 
@@ -33,68 +42,43 @@
   height: 0px;
 }
 
-
-
-/*.header + .contain {
-  display: block; padding-top: 166px; padding-bottom: 80px; text-align: justify; text-shadow: 0 1px 2px #fff;
-}
-
-.header.sub + .contain {
-  padding-top: 134px;
-}*/
-
-
 .header.main {
   h1 {
-    /*margin: 2.5rem 0;*/
-    font-size: 3em;
-    text-transform: uppercase;/*padding-top: 9px;*/
-    letter-spacing: 0.4rem;
-    height: 88px;
-    height: 114px;
+    text-transform: uppercase;
+    height: 62px;
     overflow: hidden;
-    /*color: #fff;*/
-    /*text-shadow: 0 1px 5px #000;*/
-    /*color: #ddd;*/
     border-top: 1px solid #444;
     position: relative;
-    background: #fff;
-    border-bottom: 1px solid #e0e0e0;
 
     @include width-above($sz-med) {
       font-size: 7.04em;
+      height: 114px;
     }
   }
 
   h3 {
-    color: #666;
+    color: #999;
     color: #aaa;
     width: 100%; text-align: center;
-    /*background: #444;*/
     background: rgba(0, 0, 0, 0.8);
     line-height: 1.2;
-      font-size: 0.8em;
-      box-shadow: 0 0 4px #fff;
-      letter-spacing: .11rem;
-      letter-spacing: .5rem;
+    text-transform: uppercase;
+    font-family: "Avenir Next LT Pro";
+    font-size: 0.75em;
+    box-shadow: 0 0 4px #fff;
 
-      height: 36px;
-      padding-top: 4px;
+    height: 18px;
+    padding-top: 4px;
+    br {
+      display: none;
+    }
     @include width-above($sz-med) {
       line-height: 1.6;
       font-size: 1em;
       overflow: hidden;
-      height: 20px;
-      padding-top: 0;
-
-      br {
-        display: none;
-      }
+      height: 28px;
+      padding-top: 4px;
     }
-
-    /*border-top: 1px solid #fff; */
-      /* border-top: 1px solid #fff; */
-    /*margin: 8px 0 0;*/
   }
 }
 

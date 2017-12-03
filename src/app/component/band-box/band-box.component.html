@@ -1,3 +1,13 @@
-<iframe *ngIf="src" style="border: 0; width: 350px; height: 472px;" [src]="src | safe" seamless><a [href]="lnk">{{alt}} {{by}}</a></iframe>
+<iframe class="bandbox" *ngIf="src" style="border: 0; width: 350px; height: 120px;" [src]="src | safe" seamless><a [href]="lnk">{{alt}} {{by}}</a></iframe>
+
+<p><a [href]="dl" (click)="getAlbum(alt)" target="_blank" class="button" title="Download {{alt}} now from Mega.NZ" [ngStyle]="{'background': 'url(images/'+img+') 50% 50%'}"><span>download <b>({{sz}})</b></span><span [ngStyle]="{'background-color': '#'+col}"></span></a></p>
 
 <img *ngIf="img" [src]="'./images/'+img" [alt]="alt">
+
+<h2 [innerHTML]="ded[0]"></h2>
+<p [innerHTML]="ded[1]">
+
+</p>
+<ul class="h2 tracklist">
+<li *ngFor="let track of tracks" [innerHTML]="track"></li>
+</ul>

@@ -13,12 +13,12 @@ const routes: Routes = [
   { path: 'd2',     component: D2Component,    pathMatch: 'full' },
   { path: 'd3',     component: D3Component,    pathMatch: 'full' },
   { path: 'd4',     component: D4Component,    pathMatch: 'full' }
-
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule],
   providers: []
 })
+
 export class D10RoutingModule { }

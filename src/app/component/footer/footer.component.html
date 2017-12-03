@@ -1,5 +1,15 @@
 <div class="footer"
   [className]="navBG">
-  <span class="bg" *ngIf="navBG"></span>
-  <p class="credits">Copyright &copy;2016-2017 Dan Cruzat, all rights reserved</p>
+  <div class="contain">
+    <div class="icolinks">
+      <a href="http://twitter.com/_cruzat" (click)="goLink('Twitter')" title="validate my bullshit on Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://cruzat.bandcamp.com/" (click)="goLink('BandCamp')" title="buy my shit on BandCamp" target="_blank"><i class="fa fa-bandcamp"></i></a>
+      <!-- <a href="" (click)="goLink('GitHub')" title="see the source for this shit on GitHub" target="_blank"><i class="fa fa-github"></i></a> -->
+    </div>
+
+    <div>
+      <span class="bg" *ngIf="navBG"></span>
+      <p class="credits">Copyright &copy;2016-2017 <a href="http://thecruzat.com" title="dat guy dere" target="_blank">Dan Cruzat</a>, all rights reserved</p>
+    </div>
+  </div>
 </div>

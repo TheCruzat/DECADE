@@ -11,28 +11,93 @@
   box-sizing: border-box;
 }
 body, html {
-  font-family: 'Avenir Next LT Pro', sans-serif; font-weight: 900;
+  font-family: 'Avenir Next LT Regular', sans-serif; /*font-weight: 900;*/
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   background: #f4f4f4;
+  position: relative;
+  min-height: 100vh;
+  @include width-below($sz-sm) {
+    font-size: 0.88rem;
+  }
+}
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 1px solid #ddd;
+
+  /*padding: 14px 20px 0;*/
+  height: 50px;
+  width: 150px;
+  display: flex;
+  margin: -25px 0 0 -75px;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.icolinks {
+  font-size: 0.75rem;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  a {
+    color: #fff;
+    background: rgba(0,0,0,0.4);
+    border-radius: 50%;
+    display: flex;
+    width: 20px;
+    height: 20px;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.4s;
+    @include width-above($sz-med) {
+      .fa {
+        opacity: 0.7;
+        transition: opacity 0.4s;
+      }
+      &:hover {
+        background: #000;
+        font-size: 0.9rem;
+        .fa {
+          opacity: 1;
+        }
+      }
+    }
+    +a {
+      margin-left: 4px;
+    }
+  }
 }
 
 .header, .footer {
-  display: block; position: fixed; z-index: 5;  width: 100%; /*border-bottom: 1px solid #f1f1f1;*/
-
-  /*border-bottom: 1px solid #fff;*/
-  box-shadow: 0 0 20px #fff;
+  display: block; position: fixed; z-index: 5;  width: 100%; box-shadow: 0 0 20px #fff;
 }
 
 hr {
-  height: 120px;
+  height: 110px;
   border: none;
+  @include width-above($sz-med) {
+    height: 120px;
+  }
+
+  &.foot {
+    height: 72px;
+  }
 
   &.main {
-    height: 160px;
+    height: 106px;
+
+    @include width-above($sz-med) {
+      height: 160px;
+    }
   }
 }
 
@@ -40,15 +105,19 @@ hr {
 
 h2 {
   margin: 32px 0 16px; text-transform: uppercase; font-size: 1.2em; font-weight: 600;
+  font-family: "Avenir Next LT Pro";
 
 }
 .topper {
   text-align: center;
   margin-top: 0;
   line-height: 1;
-  font-size: 3rem;
   color: #aaa;
+  font-size: 2rem;
   font-weight: 100;
+  @include width-above($sz-sm) {
+    font-size: 3rem;
+  }
 }
 .largo {
   font-size: 1.3rem;
@@ -56,12 +125,28 @@ h2 {
 p + p {
   margin-top: 16px;
 }
+ul + h2,
 p + h2,
-p.h2 {
+.h2 {
   border-top: 1px solid #ddd; padding-top: 28px;
 }
+.tracklist {
+  list-style: none;
+  font-size: 0.7rem;
+  columns: 2;
+  margin-bottom: -8px;
+  text-align: left;
+  @include width-above($sz-sm) {
+    font-size: 0.85rem;
+  }
+  li {
+    margin-bottom: 8px;
+    padding-right: 8px;
+  }
+}
+.tracklist,
 p.credits,
-p.h2 {
+.h2 {
   margin-top: 32px;
 }
 p.credits {
@@ -78,19 +163,82 @@ a {
   font-weight: 900;
   padding: 12px 24px;
   border-radius: 4px;
+  overflow: hidden;
   text-decoration: none;
   display: block;
-  width: 150px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  width: 100%;
   text-align: center;
   transition: all 0.3s;
-  margin: 24px auto 0;
+  margin: 0 auto 24px;
+  position: relative;
+  font-family: "Avenir Next LT Regular";
+  letter-spacing: 0.03rem;
+  -moz-osx-letter-spacing: -0.05rem;
+
+  &.full {
+    width: 100%;
+    background: #666;
+    transition: all 0.4s;
+
+    &:hover {
+      background: #333;
+    }
+  }
+
+  span {
+    position: relative;
+    z-index: 2;
+    +span {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: auto;
+      width: auto;
+      opacity: 0.7;
+    }
+  }
+
+  b {
+    opacity: 0.6;
+  }
+
+
 }
+
+app-d1 .button {
+  background: $color1;
+
+  b {
+  }
+}
+app-d2 .button {
+  background: $color2;
+
+  b {
+  }
+}
+app-d3 .button {
+  background: $color3;
+
+  b {
+  }
+}
+app-d4 .button {
+  background: $color4;
+
+  b {
+  }
+}
+
 .button:hover {
-  background-color: #03b28f;
   color: #fff;
 }
 .contain {
-  max-width: 624px;
+  max-width: 660px;
   width: 100%;
   margin: 0 auto; /* 48px;*/
   padding: 0 12px;
@@ -114,13 +262,12 @@ img {
 
 
 
-iframe {
+iframe.bandbox {
   margin-bottom: 24px;
   width: 100%!important;
+  float: left;
 }
 @media (max-width: 767px) {
   h1 {
-    /*text-align: left;*/
-    /*font-size: 2em;*/
   }
 }

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { GoogleAnalyticsEventsService } from "../../google-analytics-events-service";
 
 @Component({
   selector: 'app-footer',
@@ -10,9 +11,14 @@ export class FooterComponent implements OnInit {
   @Input() navBG;
   @Input() isMain;
 
-  constructor() { }
+  constructor(public googleAnalyticsEventsService: GoogleAnalyticsEventsService) { }
 
   ngOnInit() {
+  }
+
+  goLink(alt) {
+    this.googleAnalyticsEventsService.emitEvent('Offsite', alt);
+    console.log('Offsite link tracked for '+alt);
   }
 
 }
