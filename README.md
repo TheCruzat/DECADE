@@ -1,4 +1,6 @@
-# Decade
+# D/EC/AD/E
+
+Microsite as liner notes for the four volume set from Dan Cruzat.
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.28.3.
 
