@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Tracks } from "../../services/tracks";
 import { GoogleAnalyticsEventsService } from "../../google-analytics-events-service";
 
 @Component({
@@ -37,39 +38,6 @@ export class D3Component implements OnInit {
       "This chapter is for Lacey Lin, who deserved far better than what I had to offer. <br>I hope you're dancing."
     ]
 
-    this.tracks = [
-      '1. An Understatement to Say...',
-      '2. A Stranger In the Missed',
-      '3. The Haze',
-      '4. Insomnia',
-      '5. Sarcasm and Sincerity',
-      '6. My Office in the Sky',
-      '7. DWNVSKL (Return to Camp Bell)',
-      '8. Bodega Chicken',
-      '9. Do You Dream?',
-      '10. This Is My Fuckin Dream',
-      '11. Born of Kings',
-      '12. The Girl on the Bus',
-      '13. I&#39;m a 70&#39;s Baby, Baby',
-      '14. Sticky Fingers',
-      '15. Pressure Pier',
-      '16. Came Up Sick',
-      '17. They Needed Us',
-      '18. I Was Selfish',
-      '19. Ridiculous Chivalrous Posturing',
-      '20. After the Soul',
-      '21. Scared Ass Bitch',
-      '22. Magellan',
-      '23. Drink &amp; Write',
-      '24. Ascetix (What Kind of Life?)',
-      '25. Stakeout',
-      '26. Losing Time',
-      '27. Nose Fulla Coke',
-      '28. The Whye',
-      '29. Ellsworth',
-      '30. The Art of Moneymaking (Layercake)',
-      '31. The First Time I Saw Her',
-      '32. Cruzat vs Fruition (For LL / Pump)'
-    ]
+    this.tracks = Tracks.D3;
   }
 }
