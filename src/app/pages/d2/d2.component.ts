@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Tracks } from "../../services/tracks";
 import { GoogleAnalyticsEventsService } from "../../google-analytics-events-service";
 
 @Component({
@@ -37,45 +38,6 @@ export class D2Component implements OnInit {
       'This chapter is for Eva and Max, who made me a better me. I am so so sorry.'
     ]
 
-    this.tracks = [
-      '1. Creative Thinkers Advance',
-      '2. I Am The Man',
-      '3. Plodd (Seaside Air)',
-      '4. The Almost True Story of How We Fell In Love',
-      '5. Lucky Guitar Strap',
-      '6. Blood',
-      '7. Cold Process of Elimination',
-      '8. Morning Routine',
-      '9. Bumped Up',
-      '10. The Storm Breaks',
-      '11. Obama Can&#39;t Walk On Water',
-      '12. Bruh',
-      '13. Daily Commute (Little Green Notebook)',
-      '14. The Weird',
-      '15. Downtemp',
-      '16. Corporate Culture',
-      '17. All Day',
-      '18. Here We Go',
-      '19. Fidelus',
-      '20. Reflections',
-      '21. The Law of the Corner',
-      '22. I Never Saw It',
-      '23. Hope You&#39;re Proud',
-      '24. Still Climbing',
-      '25. Calm in the Chase',
-      '26. Electrocaine',
-      '27. Bullshit Agency',
-      '28. The Oasis is Real',
-      '29. The Last Man (Stardust)',
-      '30. So Glad It Never Happened',
-      '31. The Seed of Menace',
-      '32. Light Reign',
-      '33. Sadness of Dusk (Shambles)',
-      '34. Swanger',
-      '35. The Knowing',
-      '36. The End',
-      '37. Eva &amp; Max',
-      '38. Cruzat vs INXS (Questions)'
-    ]
+    this.tracks = Tracks.D2;
   }
 }

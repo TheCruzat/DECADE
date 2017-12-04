@@ -2,12 +2,12 @@
 
 <p><a [href]="dl" (click)="getAlbum(alt)" target="_blank" class="button" title="Download {{alt}} now from Mega.NZ" [ngStyle]="{'background': 'url(images/'+img+') 50% 50%'}"><span>download <b>({{sz}})</b></span><span [ngStyle]="{'background-color': '#'+col}"></span></a></p>
 
-<img *ngIf="img" [src]="'./images/'+img" [alt]="alt">
+<a *ngIf="img" [href]="'./images/'+img" [title]="alt+' '+by" target="_blank"><img [src]="'./images/'+img" [alt]="alt+' '+by"></a>
 
 <h2 [innerHTML]="ded[0]"></h2>
 <p [innerHTML]="ded[1]">
 
 </p>
 <ul class="h2 tracklist">
-<li *ngFor="let track of tracks" [innerHTML]="track"></li>
+<li *ngFor="let track of tracks; let i = index" [innerHTML]="(i+1)+'. '+track"></li>
 </ul>
